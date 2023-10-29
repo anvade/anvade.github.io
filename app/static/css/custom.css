@@ -1,0 +1,17 @@
+body{
+    background: rgb(21,21,21);
+    background: linear-gradient(90deg, rgba(21,21,21,1) 0%, rgba(37,37,37,1) 50%, rgba(21,21,21,1) 100%);
+}
+.cust-text-white{
+    color: #EEEEEE;
+}
+.cust-text-gray{
+    color: #A3A3A3;
+}
+.cust-card-bg{
+    background-color: #252525;
+}
+.cust-btn-bg{
+    background-color: #555555;
+    border: 0;
+}
