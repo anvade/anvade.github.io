@@ -2,4 +2,4 @@
 
 /opt/render/project/src/.venv/bin/python -m pip install --upgrade pip
 
-py wsgi.py
+pip install -r requirements.txt
