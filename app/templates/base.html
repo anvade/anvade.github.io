@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <H1 class="cust-text-white text-center">Кругликов Иван</H1>
+                <H1 class="cust-text-white text-center">{{pagination.has_next}}</H1>
             </div>
         </div>
     </div>
@@ -31,28 +31,53 @@
     </div>
     <div class="container">
         <div class="row justify-content-center">
+            {%for project in projects%}
             <div class="col-3">
                 <div class="card cust-card-bg" style="width: 18rem;">
-                    <img src="..\static\img\1.jpg" class="card-img-top" height="150"  alt="...">
+                    <img src="..\static\img\{{project.image}}" class="card-img-top" height="150"  alt="...">
                     <div class="card-body">
-                    <h5 class="card-title cust-text-white">Заголовок карточки</h5>
-                    <p class="card-text cust-text-gray">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
-                    <a href="#" class="btn btn-secondary cust-btn-bg">Перейти куда-нибудь</a>
+                    <h5 class="card-title cust-text-white">{{project.title}}</h5>
+                    <p class="card-text cust-text-gray">{{project.text}}</p>
+                    <a href="#" class="btn btn-secondary cust-btn-bg">Перейти</a>
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <div class="card cust-card-bg" style="width: 18rem;">
-                    <img src="..\static\img\2.jpg" class="card-img-top"  height="150" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title cust-text-white">Заголовок карточки</h5>
-                    <p class="card-text cust-text-gray">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
-                    <a href="#" class="btn btn-secondary cust-btn-bg">Перейти куда-нибудь</a>
-                    </div>
-                </div>
-            </div>
+            {%endfor%}
         </div>    
     </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            {%if pagination.has_prev%}
+            <a class="page-link" href="{{pagination.page_href(page-1)}}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only"></span>
+            </a>
+            {%else%}
+            <a class="page-link" href="{{pagination.page_href(page)}}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only"></span>
+            </a>
+            {%endif%}
+          </li>
+          {%for pg in pagination.pages%}
+          <li class="page-item"><a class="page-link" href="{{pagination.page_href(pg)}}">{{pg}}</a></li>
+          {%endfor%}
+          <li class="page-item">
+            {%if pagination.has_next%}
+            <a class="page-link" href="{{pagination.page_href(page+1)}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only"></span>
+              </a>
+            {%else%}
+            <a class="page-link" href="{{pagination.page_href(page)}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only"></span>
+            </a>
+            {%endif%}
+          </li>
+        </ul>
+      </nav>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-4 ">

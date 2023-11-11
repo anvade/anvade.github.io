@@ -1,0 +1,5 @@
+{
+  "image": "portfolio.jpg",
+  "title": "портфолио",
+  "text": "мой личный сайт"
+}
