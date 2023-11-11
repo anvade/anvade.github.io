@@ -2,8 +2,6 @@ blinker
 click
 colorama
 Flask
-flask-paginate
-Frozen-Flask
 itsdangerous
 Jinja2
 MarkupSafe
