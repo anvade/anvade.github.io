@@ -13,5 +13,48 @@ body{
 }
 .cust-btn-bg{
     background-color: #555555;
+
+}
+.cust-btn-br{
     border: 0;
+}
+.cust-btn:hover{
+    color:#252525;
+
+}
+.cust-btn:active{
+    color:#EEEEEE;
+    background-color:#252525;
+    box-shadow: none;
+
+}
+.cust-btn:focus{
+    color:#EEEEEE;
+    background-color:#252525;
+    box-shadow: none;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0%;
+}
+a{
+    color: #A3A3A3;
+   
+}
+a:hover{
+    color: #EEEEEE;
+}
+a:active{
+    color: #555555;
+}
+p{
+    margin: 0%;
+
+}
+
+@media screen  and (max-width: 768px) {
+    .cust-ms{
+        padding-left: 100px;
+    }
 }

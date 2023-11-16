@@ -1,5 +1,0 @@
-{
-  "image": "empty.jpg",
-  "title": "empty",
-  "text": "empty4"
-}
