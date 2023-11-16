@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='..\static\css\bootstrap.css'>
+    <link rel='stylesheet' type='text/css' href='..\static\css\custom.css'>
+    <script src='main.js'></script> 
+</head>
+<body>
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <H1 class="cust-text-white text-center">Кругликов Иван</H1>
+            </div>
+        </div>
+    </div>
+    <div class="container cust-ms  cust-text-white ">
+        <div class="row justify-content-center " >
+                <div class="col-sm-12 col-md-4 ">
+                    <H3>Образование</H3>
+                    <p class="cust-text-gray">Воронежский Госсударственный университет</p> 
+                    <p class="cust-text-gray">2021-2025гг</p> 
+                    <p class="cust-text-gray">Факультет компрьютерных наук</p> 
+                    <p class="cust-text-gray">Математика и компьютерные науки</p>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                    <H3>Языки</H3>
+                    <ul  class="cust-text-gray">
+                        <li>
+                            <p>Русский</p>
+                        </li>
+                        <li>
+                            <p>Английский Pre-Intermediate</p>
+                        </li>
+                    </ul>
+                </div>
+
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row justify-content-center gy-2 gx-5">
+            {%for project in projects%}
+            <div class="col-md-4 col-lg-3 col-xl-3  col-xxl-3 " align="center" >
+                <div class="card cust-card-bg" style="width: 14rem;">
+                    <img src="..\static\img\{{project.image}}" class="card-img-top" height="150"  alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title cust-text-white">{{project.title}}</h5>
+                    <p class="card-text cust-text-gray">{{project.text}}</p>
+                    <a href="#" class="btn btn-secondary cust-btn-bg cust-btn-br">Перейти</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>    
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center p-2">
+          <li class="page-item">
+            {%if pagination.has_prev%}
+            <a class="page-link cust-btn cust-btn-bg cust-text-white cust-btn-br" href="{{pagination.page_href(page-1)}}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only"></span>
+            </a>
+            {%else%}
+            <a class="page-link cust-btn cust-btn-bg cust-text-white cust-btn-br" href="{{pagination.page_href(page)}}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only"></span>
+            </a>
+            {%endif%}
+          </li>
+          {%for pg in pagination.pages%}
+          {%if pg == pagination.page %}
+          <li class="page-item"><a class="page-link  cust-btn cust-card-bg cust-text-white cust-btn-br" href="{{pagination.page_href(pg)}}">{{pg}}</a></li>
+          {%else%}
+          <li class="page-item"><a class="page-link cust-btn cust-btn-bg cust-text-white cust-btn-br" href="{{pagination.page_href(pg)}}">{{pg}}</a></li>
+          {%endif%}
+          {%endfor%}
+          <li class="page-item">
+            {%if pagination.has_next%}
+            <a class="page-link cust-btn cust-btn-bg cust-text-white cust-btn-br" href="{{pagination.page_href(page+1)}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only"></span>
+              </a>
+            {%else%}
+            <a class="page-link cust-btn cust-btn-bg cust-text-white cust-btn-br" href="{{pagination.page_href(page)}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only"></span>
+            </a>
+            {%endif%}
+          </li>
+        </ul>
+      </nav>
+    <div class="container cust-ms cust-text-white">
+        <div class="row justify-content-center ">
+            <div class="col-sm-12 col-md-4 ">
+                <H5>контакты</H5>
+                <ul>
+                    <li>
+                        <a  href="mailto:Kruglikoviv@yandex.ru">Kruglikoviv@yandex.ru</a>
+                    </li>
+                    <li>
+                        <a href="https://vk.com/anvade">VK</a>
+                    </li>
+                </ul>
+                
+                
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <H5 >Навыки</H5> 
+                    <p class="cust-text-gray">Python</p>
+                    <p class="cust-text-gray">Flask</p>
+                    <p class="cust-text-gray">Django</p>
+                    <p class="cust-text-gray">HTML5</p>
+                    <p class="cust-text-gray">CSS</p>
+                    <p class="cust-text-gray">Git</p>
+                    <p class="cust-text-gray">Docker</p>
+            </div>
+        </div>
+    </div>
+    <script src="..\static\js\bootstrap.js"></script>
+</body>
+</html>
